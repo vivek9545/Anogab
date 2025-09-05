@@ -2,3 +2,12 @@
 npm create vite@latest random-chat-react -- --template react
 cd random-chat-react
 npm install
+
+
+
+GIT STEPS
+1. move to project  folder
+2. git init
+3. git add .
+4. git commit -m "Initial commit"
+5. git remote add origin https://github.com/username/repository.git
