@@ -1,0 +1,55 @@
+
+.navbar {
+  background-color: var(--light-grey);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 0;
+  padding-right: 3rem;
+  padding-left: 0.8rem;
+}
+
+.navbar .logo img{
+  height: 2.4rem;
+  margin-left: 3px;
+  margin-right: 6px;
+}
+
+.navbar .logo {
+  display: flex;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 2.25rem;
+  font-weight: 500;
+  color: var(--med-teal);
+}
+
+.navbar .nav-links a {
+  font-family: "Roboto Slab", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--dark-grey);
+  margin-left: 20px;
+  text-decoration: none;
+  position: relative; /* Required for positioning the pseudo-element */
+}
+
+.navbar .nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: var(--med-teal); /* Adjust underline color */
+  transition: width 0.2s ease-in-out;
+}
+
+.navbar .nav-links a:hover::after {
+  width: 100%; /* Expands the underline on hover */
+}
+
+/* Active link styling */
+.navbar .nav-links a.active-link::after {
+  width: 100%; /* Ensures the underline is fully visible when the link is active */
+}

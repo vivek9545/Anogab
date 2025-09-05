@@ -1,0 +1,33 @@
+.room-lobby {
+    height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-family: "poppins";
+}
+
+.room-form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.room-input {
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  background: var(--med-teal);
+  color: white;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--dark-teal);
+}

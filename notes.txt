@@ -1,0 +1,4 @@
+# in a separate folder from the Spring project
+npm create vite@latest random-chat-react -- --template react
+cd random-chat-react
+npm install
