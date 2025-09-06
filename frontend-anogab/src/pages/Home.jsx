@@ -1,6 +1,6 @@
 // pages/Home.jsx
 import React from 'react';
-import Chat from '../components/Chat';
+import Chat from './Chat';
 
 const Home = () => {
   // return <div>This is Home page</div>;

@@ -1,9 +1,9 @@
 // Croom.jsx
 import { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
-import '../components/chat.css';
+import './chat.css';
 
-export default function Croom() {
+export default function Room() {
   const { roomId } = useParams();
   const [status, setStatus] = useState("Not connected");
   const [input, setInput] = useState("");
@@ -31,7 +31,8 @@ export default function Croom() {
   }, [roomId]);
 
   function connect() {
-    const ws = new WebSocket(`ws://localhost:8080/room?roomId=${roomId}`);
+    // const ws = new WebSocket(`ws://localhost:8080/room?roomId=${roomId}`);
+    const ws = new WebSocket(`wss://anogab-backend.onrender.com/room?roomId=${roomId}`);
     wsRef.current = ws;
 
     ws.onopen = () => setStatus(`Connected to room ${roomId}`);

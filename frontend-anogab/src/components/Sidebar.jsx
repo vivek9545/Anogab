@@ -1,30 +1,25 @@
-import { NavLink } from 'react-router-dom';  // Import NavLink instead of Link
+
+import { NavLink } from 'react-router-dom';
 import './Sidebar.css';
 import HomeSvg from '../assets/Home.svg?react';
 import RoomSvg from '../assets/Room.svg?react';
 import AboutSvg from '../assets/About.svg?react';
 
-const Sidebar = () => {
+const Sidebar = ({ closeSidebar }) => {
   return (
     <div className="sidebar">
-      <NavLink 
-        to="/home" 
-        className={({ isActive }) => isActive ? 'active' : ''}  // Apply 'active' class when active
-      >
+      {/* Close button for mobile */}
+      <button className="close-btn" onClick={closeSidebar}>×</button>
+
+      <NavLink to="/home" className={({ isActive }) => isActive ? 'active' : ''}>
         <HomeSvg className='icon homesvg' />
         Home
-      </NavLink >
-      <NavLink 
-        to="/chatroom" 
-        className={({ isActive }) => isActive ? 'active' : ''}
-      >
+      </NavLink>
+      <NavLink to="/chatroom" className={({ isActive }) => isActive ? 'active' : ''}>
         <RoomSvg />
         Chat Room
       </NavLink>
-      <NavLink 
-        to="/about" 
-        className={({ isActive }) => isActive ? 'active' : ''}
-      >
+      <NavLink to="/about" className={({ isActive }) => isActive ? 'active' : ''}>
         <AboutSvg />
         About Us
       </NavLink>

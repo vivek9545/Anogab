@@ -1,23 +1,31 @@
-import { NavLink } from 'react-router-dom';  // Import NavLink
+
+import { NavLink } from 'react-router-dom';
 import './Navbar.css';
 import logo from '../assets/Anogab.png';
 
-const Navbar = () => {
+const Navbar = ({ toggleSidebar }) => {
   return (
     <nav className="navbar">
-      <div className="logo">
+     
+      <NavLink to="/home" className="logo">
         <img src={logo} className="logoimg" alt="AG" />
         AnoGab
-      </div>
+      </NavLink>
+
       <div className="nav-links">
-        {/* Use NavLink instead of Link for active link styling */}
-        <NavLink 
-          to="/services" 
-          className={({ isActive }) => isActive ? 'active-link' : ''}  // Add active class if route is active
+        <NavLink
+          to="/about"
+          className={({ isActive }) => (isActive ? 'active-link' : '')}
         >
           Hi, User
         </NavLink>
+        {/* Hamburger icon for mobile */}
+        <button className="burger" onClick={toggleSidebar}>
+          &#9776; {/* Unicode for ☰ */}
+        </button>
       </div>
+
+      
     </nav>
   );
 };

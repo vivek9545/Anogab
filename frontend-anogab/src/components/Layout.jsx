@@ -1,19 +1,34 @@
-import Navbar from './Navbar';  // Assuming Navbar is in the same folder
-import Sidebar from './Sidebar'; // Assuming Sidebar is in the same folder
+
+import { useState } from 'react';
+import Navbar from './Navbar';
+import Sidebar from './Sidebar';
 import './Layout.css';
 
 const Layout = ({ children }) => {
+  const [isSidebarOpen, setSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setSidebarOpen(prev => !prev);
+  };
+
+  const closeSidebar = () => {
+    setSidebarOpen(false);
+  };
+
   return (
     <div className="layout">
-      {/* Navbar */}
-      <Navbar />
+      {/* Navbar with toggle */}
+      <Navbar toggleSidebar={toggleSidebar} />
 
-      {/* Main content area with Sidebar */}
+      {/* Optional overlay on mobile */}
+      {isSidebarOpen && <div className="overlay" onClick={closeSidebar} />}
+
       <div className="main-container">
-        <div className="sidebar-area">
-          <Sidebar />
+        {/* Sidebar: visible or slide-in depending on screen size */}
+        <div className={`sidebar-area ${isSidebarOpen ? 'open' : ''}`}>
+          <Sidebar closeSidebar={closeSidebar} />
         </div>
-        {/* Content will be rendered here */}
+
         <div className="content-area">
           {children}
         </div>
@@ -23,4 +38,5 @@ const Layout = ({ children }) => {
 };
 
 export default Layout;
+
 

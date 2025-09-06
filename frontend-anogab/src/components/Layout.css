@@ -15,7 +15,7 @@
 }
 
 .sidebar-area{
-  width: 5.5rem;
+  width: 6rem;
 }
 
 .content-area {
@@ -28,3 +28,36 @@
   overflow: hidden;
 
 }
+
+
+/* Overlay when sidebar is open on mobile */
+.overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background-color: rgba(0,0,0,0.4);
+  z-index: 998;
+}
+
+
+@media (max-width: 600px) {
+  .sidebar-area {
+    position: fixed;
+    top: 0;
+    right: -250px; /* was left: -250px */
+    width: 250px;
+    height: 100vh;
+    background: #333;
+    z-index: 999;
+    transition: right 0.3s ease;
+  }
+
+  .sidebar-area.open {
+    right: 0; /* was left: 0 */
+  }
+
+  .content-area {
+    margin: 1rem;
+  }
+}
+
