@@ -7,6 +7,9 @@
   padding: 0.6rem 0;
   padding-right: 3rem;
   padding-left: 0.8rem;
+
+  position: relative; /* needed to apply z-index */
+  z-index: 1000;      /* higher than overlay (998) and sidebar (999) */
 }
 
 .navbar .logo {
