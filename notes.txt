@@ -13,3 +13,13 @@ GIT STEPS
 5. git remote add origin https://github.com/username/repository.git
 6. git push -u origin master (if you are in master branch)
 
+
+
+To delete commits
+1. git checkout (branchname)
+2. git rebase -i HEAD~5
+3. edit the file (pick -> drop to delte, edit to change it)
+    vim ( :wq! changes saved           
+4. git rebase --continue
+5. git push --force
+
