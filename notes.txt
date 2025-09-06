@@ -19,7 +19,7 @@ To delete commits
 1. git checkout (branchname)
 2. git rebase -i HEAD~5
 3. edit the file (pick -> drop to delte, edit to change it)
-    vim ( :wq! changes saved           
+    vim ( :wq! changes saved       :qa! exit without saving)
 4. git rebase --continue
 5. git push --force
 
