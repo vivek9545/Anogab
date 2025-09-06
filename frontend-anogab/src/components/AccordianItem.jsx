@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './accordianItem.css'; // We'll define styles here
+import './AccordianItem.css'; // We'll define styles here
 
 const AccordionItem = ({ title, children }) => {
   const [isOpen, setIsOpen] = useState(false);

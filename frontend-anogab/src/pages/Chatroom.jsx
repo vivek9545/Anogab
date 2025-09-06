@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { nanoid } from 'nanoid'; // make sure nanoid is installed: `npm install nanoid`
-import './chatroom.css';
+import './Chatroom.css';
 
 const Chatroom = () => {
   const [roomId, setRoomId] = useState("");

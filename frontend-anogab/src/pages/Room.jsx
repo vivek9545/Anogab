@@ -1,7 +1,7 @@
 // Croom.jsx
 import { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
-import './chat.css';
+import './Chat.css';
 
 export default function Room() {
   const { roomId } = useParams();

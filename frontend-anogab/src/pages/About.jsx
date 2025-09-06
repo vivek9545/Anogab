@@ -1,6 +1,6 @@
 import React from 'react';
 import AccordionItem from '../components/AccordianItem';
-import './about.css';
+import './About.css';
 
 
 const AboutPage = () => {
