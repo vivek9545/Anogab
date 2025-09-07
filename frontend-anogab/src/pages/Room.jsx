@@ -1,4 +1,4 @@
-// Croom.jsx
+// Room.jsx
 import { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import './Chat.css';
@@ -32,7 +32,8 @@ export default function Room() {
 
   function connect() {
     // const ws = new WebSocket(`ws://localhost:8080/room?roomId=${roomId}`);
-    const ws = new WebSocket(`wss://anogab-backend.onrender.com/room?roomId=${roomId}`);
+    const ws = new WebSocket(`ws://anogab-backend.onrender.com/room?roomId=${roomId}`);
+
     wsRef.current = ws;
 
     ws.onopen = () => setStatus(`Connected to room ${roomId}`);
@@ -65,7 +66,11 @@ export default function Room() {
         return;
       }
 
-      // Treat everything else as a chat message
+      // ✅ Prevent showing my own message again
+      if (text.startsWith("FROM_ME:")) {
+        return;
+      }
+
       pushMsg(text, "them");
     };
   }
@@ -78,7 +83,7 @@ export default function Room() {
     const text = input.trim();
     if (!text || !wsRef.current || wsRef.current.readyState !== WebSocket.OPEN) return;
     wsRef.current.send(text);
-    pushMsg(text, "me");
+    pushMsg(text, "me"); // show instantly for sender
     setInput("");
   }
 

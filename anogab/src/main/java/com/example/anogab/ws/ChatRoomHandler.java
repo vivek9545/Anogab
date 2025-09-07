@@ -30,7 +30,9 @@ public class ChatRoomHandler extends TextWebSocketHandler {
     public void afterConnectionEstablished(WebSocketSession session) {
         String roomId = getRoomId(session);
         rooms.computeIfAbsent(roomId, k -> ConcurrentHashMap.newKeySet()).add(session);
-        sendSafe(session, "JOINED:" + roomId);
+
+        // ✅ Tell only this user they joined
+        sendSafe(session, "SYSTEM: User joined room " + roomId);
     }
 
     @Override
@@ -40,7 +42,12 @@ public class ChatRoomHandler extends TextWebSocketHandler {
 
         for (WebSocketSession peer : peers) {
             if (peer.isOpen()) {
-                sendSafe(peer, message.getPayload());
+                if (peer.getId().equals(session.getId())) {
+                    // ✅ Mark sender’s own message (so frontend ignores)
+                    sendSafe(peer, "FROM_ME:" + message.getPayload());
+                } else {
+                    sendSafe(peer, message.getPayload());
+                }
             }
         }
     }
