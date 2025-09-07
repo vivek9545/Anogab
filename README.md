@@ -2,7 +2,8 @@
 
 **Anogabs** stands for **Anonymous Gabbing** — a safe space where you can speak freely, connect with others, and find relief or insight through real conversations. Whether you're looking to share your experiences, ask questions, or simply engage in meaningful small talk, Anogabs gives you the freedom to do so without judgment.
 
-🔗 Live Demo: anogab.vercel.app
+🔗 Live Demo: [anogab.vercel.app](https://anogab.vercel.app)
+
 
 ---
 
