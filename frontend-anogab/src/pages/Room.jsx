@@ -31,8 +31,8 @@ export default function Room() {
   }, [roomId]);
 
   function connect() {
-    const ws = new WebSocket(`ws://localhost:8080/room?roomId=${roomId}`);
-    // const ws = new WebSocket(`ws://anogab-backend.onrender.com/room?roomId=${roomId}`);
+    // const ws = new WebSocket(`ws://localhost:8080/room?roomId=${roomId}`);
+    const ws = new WebSocket(`wss://anogab-backend.onrender.com/room?roomId=${roomId}`);
 
     wsRef.current = ws;
 

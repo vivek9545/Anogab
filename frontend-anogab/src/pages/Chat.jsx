@@ -29,8 +29,8 @@ export default function Chat() {
   }, []);
 
   function connect() {
-    const ws = new WebSocket("ws://localhost:8080/chat");
-    // const ws = new WebSocket("wss://anogab-backend.onrender.com/chat");
+    // const ws = new WebSocket("ws://localhost:8080/chat");
+    const ws = new WebSocket("wss://anogab-backend.onrender.com/chat");
     wsRef.current = ws;
 
     ws.onopen = () => setStatus("Connected");
