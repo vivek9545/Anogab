@@ -15,9 +15,16 @@
 }
 
 .homesvg{
+  height: 38px;
+  width: 38px;
   fill: currentColor;
   stroke: none;
   fill-opacity: 0.8;
+}
+
+.roomsvg{
+  /* color: var(--med-teal); */
+  opacity: 0.65;
 }
 
 
@@ -46,9 +53,14 @@
   }
 
   .homesvg {
+    stroke-width: 2;
     fill-opacity: 1;
     stroke: currentColor;
   } 
+
+  .roomsvg{
+    opacity: 1;
+  }
 } 
 
 .sidebar a.active {
@@ -60,9 +72,13 @@
   }
 
   .homesvg {
+     stroke-width: 2;
     fill-opacity: 1;
     stroke: currentColor;
   } 
+    .roomsvg{
+    opacity: 1;
+  }
 } 
 
 

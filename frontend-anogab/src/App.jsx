@@ -8,6 +8,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Chatroom from './pages/Chatroom';
 import Room from './pages/Room';
+import Chat from './pages/Chat';
 
 function App() {
   return (
@@ -16,9 +17,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/chat" element={<Chat />} />
           <Route path="/chatroom" element={<Chatroom />} />
           <Route path="/about" element={<About />} />
-
           <Route path="/room/:roomId" element={<Room />} />
         </Routes>
       </Layout>
