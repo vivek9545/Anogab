@@ -20,7 +20,8 @@ const Sidebar = ({ closeSidebar }) => {
         <ChatSvg />
         Chat 
       </NavLink>
-      <NavLink to="/chatroom" className={({ isActive }) => isActive ? 'active' : ''}>
+      <NavLink to="/chatroom"  className={({ isActive }) => `roomelement ${isActive ? 'active' : ''}`}>
+      
         <RoomSvg className='roomsvg' />
         Chat Room
       </NavLink>

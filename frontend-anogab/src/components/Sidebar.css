@@ -22,8 +22,11 @@
   fill-opacity: 0.8;
 }
 
+.roomelement{
+  margin-top: 0 !important;
+}
+
 .roomsvg{
-  /* color: var(--med-teal); */
   opacity: 0.65;
 }
 
