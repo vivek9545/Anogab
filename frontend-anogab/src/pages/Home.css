@@ -24,21 +24,23 @@ h2{
 
 .ctn-btns{
   margin: 3rem 0;
-}
 
-button, .try-btn:hover{
-  width: 10rem;
-  margin: 8px;
-  padding: 0.7rem 1rem;
-  color: black;
-  background-color: var(--light-grey);
-  border: 1px solid var(--dark-teal);
-  border-radius: 8px;
-  font-weight: bold;
-}
+  
+  button, .try-btn:hover{
+    width: 10rem;
+    margin: 8px;
+    padding: 0.7rem 1rem;
+    color: black;
+    background-color: var(--light-grey);
+    border: 1px solid var(--dark-teal);
+    border-radius: 8px;
+    font-weight: bold;
+  }
 
-button:hover, .try-btn{
-  color: white;
-  background-color: var(--med-teal);
-  border: 1px solid var(--dark-teal);
+  button:hover, .try-btn{
+    color: white;
+    background-color: var(--med-teal);
+    border: 1px solid var(--dark-teal);
+  }
+
 }
