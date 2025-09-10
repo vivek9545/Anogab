@@ -125,13 +125,15 @@
   border-radius: 1rem;
 }
 
-h2 {
+.home-container h2 {
   font-family: "Funnel Sans", "Poppins", sans-serif;
-  font-size: 2.5rem;
+  font-size: 3.5rem;
 }
 
 .subhead {
-  margin-top: 12px;
+  font-family: "Roboto", "Poppins", sans-serif;
+  color: var(--light-grey);
+  margin-top: 8px;
   font-size: 1.1rem;
   display: flex;
   flex-direction: column;

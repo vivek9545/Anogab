@@ -1,11 +1,15 @@
 .room-lobby {
-    height: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1rem;
   font-family: "poppins";
+}
+
+.room-lobby h2{
+  font-size: 2.5rem;
 }
 
 .room-form {

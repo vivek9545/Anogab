@@ -64,7 +64,7 @@ function Home() {
         <h2>A Quiet Place to Be Loud.</h2>
         <div className="subhead">
           <p>Whether you're venting, reflecting, or connecting</p>
-          <p>Anogabs gives you the space.</p>
+          <p>Anogab gives you the space.</p>
         </div>
        <div className="ctn-btns">
       <button className="try-btn" onClick={() => navigate('/chat')}>

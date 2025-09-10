@@ -22,7 +22,7 @@ const Chatroom = () => {
 
   return (
     <div className="room-lobby">
-      <h2>Join or Create a Chat Room</h2>
+      <h2>Create or Join a Chat Room</h2>
 
       {/* Create new random room */}
       <button className="btn" onClick={createRoom}>
