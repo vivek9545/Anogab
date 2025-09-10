@@ -6,6 +6,7 @@ function Home() {
   const [loading, setLoading] = useState(true);
   const [health, setHealth] = useState(null);
   const [particles, setParticles] = useState([]);
+  const [connected, setConnected] = useState(false);
   const navigate = useNavigate(); 
 
   useEffect(() => {
@@ -25,6 +26,12 @@ function Home() {
         console.log("✅ Backend health:", data);
         setHealth(data);
         setLoading(false);
+        setConnected(true); 
+
+        // Hide "Connected" after few seconds
+        setTimeout(() => {
+          setConnected(false);
+        }, 1500);
       })
       .catch((err) => {
         console.error("❌ Backend still waking up:", err);
@@ -78,12 +85,24 @@ function Home() {
       
         {/* Server status message (always takes up space) */}
         <div className="server-status-wrapper">
+          <div className="server-status">
           {loading ? (
-            <div className="server-status">
-              ⏳ Connecting to server... Please wait.
-            </div>
+              // <span className="loading-text">
+              <span className={`loading-text connect-msg ${!loading ? 'hidden' : 'visible'}`}>
+                Connecting to server
+                <span className="dot"></span>
+                <span className="dot"></span>
+                <span className="dot"></span>
+              </span>
+          ) : connected ? (
+              // <span className="loading-text connected">
+              <span className={`loading-text connected-msg ${connected ? 'visible' : 'hidden'}`}>
+                Connected 
+              </span>
           ) : null}
+            </div>
         </div>
+
     </div>
   );
 }
