@@ -15,10 +15,6 @@
   overflow: auto;
 }
 
-.sidebar-area{
-  width: 6rem;
-}
-
 .content-area {
   border: 1px solid var(--med-grey);
   border-radius: 20px;

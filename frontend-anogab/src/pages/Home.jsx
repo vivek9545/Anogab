@@ -67,21 +67,23 @@ function Home() {
           <p>Anogab gives you the space.</p>
         </div>
        <div className="ctn-btns">
-      <button className="try-btn" onClick={() => navigate('/chat')}>
-        Lets, try
-      </button>
-      <button className="learn-btn" onClick={() => navigate('/about')}>
-        Learn More
-      </button>
-    </div>
-      </div>
-
-      {/* Server status message */}
-      {loading && (
-        <div className="server-status">
-          ⏳ Connecting to server... Please wait.
+          <button className="try-btn" onClick={() => navigate('/chat')}>
+            Lets, try
+          </button>
+          <button className="learn-btn" onClick={() => navigate('/about')}>
+            Learn More
+          </button>
         </div>
-      )}
+      </div>
+      
+        {/* Server status message (always takes up space) */}
+        <div className="server-status-wrapper">
+          {loading ? (
+            <div className="server-status">
+              ⏳ Connecting to server... Please wait.
+            </div>
+          ) : null}
+        </div>
     </div>
   );
 }
