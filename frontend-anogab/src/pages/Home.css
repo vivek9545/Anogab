@@ -1,46 +1,188 @@
-.home-container{
-  height: 100%;
-  width: 100%;
+
+
+/* Background & Layout */
+.home-wrapper {
+  position: relative;
+  min-height: 100%;
+  background: linear-gradient(to bottom right, #0f172a, #134e4a, #1e293b);
+  overflow: hidden;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 2rem;
 }
 
+/* Loading Screen */
+.loading-screen {
+  text-align: center;
+  margin-top: 50px;
+  color: white;
+}
 
-h2{
-  font-family:  "Funnel Sans", "poppins";
+/* Animated Background Blobs */
+.background-blobs {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(100px);
+  mix-blend-mode: multiply;
+  opacity: 0.2;
+  animation: pulse 6s infinite;
+}
+
+.teal {
+  top: 5rem;
+  left: 2.5rem;
+  width: 18rem;
+  height: 18rem;
+  background-color: #14b8a6;
+}
+
+.blue {
+  top: 10rem;
+  right: 5rem;
+  width: 24rem;
+  height: 24rem;
+  background-color: #3b82f6;
+}
+
+.purple {
+  bottom: -8rem;
+  left: 50%;
+  width: 20rem;
+  height: 20rem;
+  background-color: #8b5cf6;
+}
+
+.delay-1 {
+  animation-delay: 1s;
+}
+.delay-2 {
+  animation-delay: 2s;
+}
+
+/* Floating Particles */
+.floating-particles {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.particle {
+  position: absolute;
+  animation: float linear infinite;
+}
+
+.dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: #2dd4bf;
+  border-radius: 9999px;
+  opacity: 0.3;
+}
+
+/* Animations */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.2;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.3;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-20px);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0.3;
+  }
+}
+
+/* Foreground Content */
+.home-container {
+  z-index: 10;
+  position: relative;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  backdrop-filter: blur(4px);
+  border-radius: 1rem;
+}
+
+h2 {
+  font-family: "Funnel Sans", "Poppins", sans-serif;
   font-size: 2.5rem;
 }
 
-.subhead{
+.subhead {
   margin-top: 12px;
   font-size: 1.1rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
-.ctn-btns{
+.ctn-btns {
   margin: 3rem 0;
-
-  
-  button, .try-btn:hover{
-    width: 10rem;
-    margin: 8px;
-    padding: 0.7rem 1rem;
-    color: black;
-    background-color: var(--light-grey);
-    border: 1px solid var(--dark-teal);
-    border-radius: 8px;
-    font-weight: bold;
-  }
-
-  button:hover, .try-btn{
-    color: white;
-    background-color: var(--med-teal);
-    border: 1px solid var(--dark-teal);
-  }
-
 }
+
+.ctn-btns button {
+  width: 10rem;
+  margin: 8px;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.try-btn {
+  color: white;
+  background-color: var(--med-teal);
+  border: 1px solid var(--dark-teal);
+}
+
+.learn-btn{
+  color: white;
+  background-color: transparent;
+  border: 1px solid white;
+}
+
+.try-btn:hover{
+  color: var(--med-teal);
+  background-color: transparent;
+  border: 1px solid var(--med-teal);
+}
+
+.learn-btn:hover {
+  color: black;
+  background-color: white;
+}
+
+/* Subtle server status at bottom */
+.server-status {
+  position: fixed;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  color: #ffffffcc;
+  font-size: 0.9rem;
+  z-index: 50;
+  pointer-events: none;
+}
+
