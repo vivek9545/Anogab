@@ -1,29 +1,54 @@
 
 
-// App.jsx
+// // App.jsx
+// import React from 'react';
+// import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+// import Layout from './components/Layout';
+// import Home from './pages/Home';
+// import About from './pages/About';
+// import Chatroom from './pages/Chatroom';
+// import Room from './pages/Room';
+// import Chat from './pages/Chat';
+
+// function App() {
+//   return (
+//     <BrowserRouter>
+//       <Layout >
+//         <Routes>
+//           {/* <Route path="/" element={<Home />} /> */}
+//           <Route path="/" element={<Navigate to="/home" replace />} />
+//           <Route path="/home" element={<Home />} />
+//           <Route path="/chat" element={<Chat />} />
+//           <Route path="/chatroom" element={<Chatroom />} />
+//           <Route path="/about" element={<About />} />
+//           <Route path="/room/:roomId" element={<Room />} />
+//         </Routes>
+//       </Layout>
+//     </BrowserRouter>
+//   );
+// }
+
+// export default App;
+
+
+
 import React from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import Layout from './components/Layout';
-import Home from './pages/Home';
-import About from './pages/About';
-import Chatroom from './pages/Chatroom';
-import Room from './pages/Room';
-import Chat from './pages/Chat';
+import { AnimatePresence } from 'framer-motion';
+import LocationProvider from './components/LocationProvider';
+import RoutesWithAnimation from './components/RoutesWithAnimation';
 
 function App() {
   return (
     <BrowserRouter>
-      <Layout>
-        <Routes>
-          {/* <Route path="/" element={<Home />} /> */}
-          <Route path="/" element={<Navigate to="/home" replace />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/chat" element={<Chat />} />
-          <Route path="/chatroom" element={<Chatroom />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/room/:roomId" element={<Room />} />
-        </Routes>
-      </Layout>
+      <AnimatePresence>
+        <Layout>
+          <LocationProvider>
+            <RoutesWithAnimation />
+          </LocationProvider>
+        </Layout>
+      </AnimatePresence>
     </BrowserRouter>
   );
 }

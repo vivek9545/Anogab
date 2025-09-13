@@ -1,5 +1,4 @@
 
-
 .layout {
   display: flex;
   flex-direction: column;
@@ -22,11 +21,15 @@
   margin-bottom: 10px;
   margin-right: 10px;
   overflow: auto;
+} 
+
+.content-area > div{
+  height: 100%;
+  width: 100%;
 }
 
 
-/* Overlay when sidebar is open on mobile */
-.overlay {
+ .overlay {
   position: fixed;
   top: 0; left: 0;
   width: 100vw; height: 100vh;
@@ -39,7 +42,7 @@
   .sidebar-area {
     position: fixed;
     top: 0;
-    right: -250px; /* was left: -250px */
+    right: -250px;
     width: 250px;
     height: 100vh;
     background: #333;
@@ -48,11 +51,11 @@
   }
 
   .sidebar-area.open {
-    right: 0; /* was left: 0 */
+    right: 0; 
   }
 
   .content-area {
     margin: 1rem;
   }
-}
+} 
 
