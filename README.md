@@ -55,6 +55,9 @@ To run Anogab locally:
 
 ---
 
+## Technical Summary 
+Anogab is a full-stack web application enabling anonymous one-on-one and group chats, built with a Java Spring Boot backend and ReactJs frontend. The frontend is deployed via Vercel and supports responsive design for mobile and desktop.
+
 ## 🤝 Contributing
 
 We welcome contributions to enhance Anogab! To contribute:
