@@ -11,7 +11,7 @@ function RoutesWithAnimation() {
 
   return (
     <AnimatePresence mode="wait">
-      <Routes location={location} key={location.key}>
+      <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Navigate to="/home" replace />} />
         <Route
           path="/home"
